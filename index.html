@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+          background-color: black;
+        }
+        .first{
+          position: relative;
+          background-image: url(background.jpeg);
+          width: 100vw;
+          height: 800px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        
+        .logo{
+          position: absolute;
+          width: 200px;
+          height: 150px;
+          top: 20px;
+          left: 100px;
+          
+        }
+        .button{
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          display: flex;
+          margin-right: 200px;
+          flex-direction: row;
+          gap: 30px;
+          border-radius: 10px;
+          font-size: medium;
+        }
+        .btn-secondary{
+          background-color: transparent;
+          
+        }
+        .btn-transparent:hover{
+          background-color: whitesmoke;
+        } 
+        .title h1{
+          position: relative;
+          text-align: center;
+          color: white;
+          font-size: 70px;
+        }
+        .title p{
+          position: relative;
+          text-align: center;
+          color: white;
+          font-size: 30px;
+        }
+        .details{
+          position: absolute;
+          bottom: 230px;
+          left: 550px;
+          gap: 30px;
+          display: flex;
+          text-align: center;
+          justify-content: center;
+          height: 50px;
+        }
+        
+        .form-control{
+          
+          color: white;
+          background: transparent;
+          width: 500px;
+          padding: 10px;
+          border-radius: 10px;
+          border: 1px solid white;
+          
+        }
+        .form-control:focus{
+          color: white;
+          background: transparent;
+          width: 500px;
+          padding: 10px;
+          border-radius: 10px;
+          border: 1px solid white;
+          
+        }
+        .second{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px;
+          gap: 30px;
+        }
+        .para2 h1,p{
+          text-align: center;
+          color: white;
+          text-align: left;
+        }
+        .para2 h1{
+          font-size: 50px;
+        }
+        .para2 p{
+          font-size: 22px;
+        }
+        .para3 h1,p{
+          color: white;
+          text-align: left;
+          margin: 30px;
+        }
+        .para3 h1{
+          font-size: 50px;
+        }
+        .para3 p{
+          font-size: 22px;
+        }
+        .cartoon img{
+          max-width: 100%;
+          height: auto;
+          width: 500px;
+        }
+        .thick-line{
+          border: 0;
+          background-color: white;
+          border-top: 5px solid white;
+        }
+        .tv{
+          position: relative;
+          width: 900px;
+          height: auto;
+        }
+        .tv img{
+          width: 100%;
+          position: relative;
+          height: auto;
+          z-index: 5;
+        }
+        .tv video{
+          position: absolute;
+          z-index: 1;
+          top: 10%;
+          left: 21%;
+          width: 72%;
+          height: 50%;
+          object-fit: cover;
+        }
+        .fourth{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px;
+          gap: 30px;
+        }
+        .para4 h1,p{
+          text-align: center;
+          color: white;
+          text-align: left;
+        }
+        .para4 h1{
+          font-size: 50px;
+        }
+        .para4 p{
+          font-size: 22px;
+        }
+        .fifth{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px;
+          gap: 30px;
+        }
+        .para5{
+          margin: 30px;
+        }
+        .para5 h1{
+          color: white;
+          text-align: left;
+          font-size: 50px;
+        }
+        .para5 p{
+          color: white;
+          text-align: left;
+          font-size: 22px;
+        }
+        .fifth .tv img{
+          width: 100%;
+          position: relative;
+          height: auto;
+          z-index: 5;
+        }
+        .fifth .tv video{
+          position: absolute;
+          z-index: 2;
+          top: 21%;
+          left: 13%;
+          width: 73%;
+          height: 55%;
+          object-fit: cover;
+        }
+        .last{
+          color: white;
+          text-align: center;
+          justify-content: center;
+        }
+        
+        .accordion-button{
+          background-color: black;
+          color: white;
+          border: 1px solid white;
+          margin-bottom: 2px;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: black;
+            color: white;
+        }
+        .footer{
+          background-color: rgb(47, 30, 30);
+          color: white;
+          text-align: center;
+          padding: 20px 10px;
+          font-size: 14px;
+        }
+        .foot{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .up{
+          margin-bottom: 0px;
+        }
+        .points p{
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          justify-content: center;
+        }
+        .footer a{
+          color: white;
+          text-decoration: none;
+          margin: 0 5px;
+        }
+        .footer a:hover{
+          text-decoration: underline;
+        }
+        hr{
+          color: white;
+          height: 5px;
+        }
+
+
+        
+        @media (max-width: 1300px) {
+          .logo{
+            width: 170px;
+            left: 20px;
+          }
+          .button{
+            top: 20px;
+            margin-right: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+          }
+          .title h1{
+            font-size: 40px;
+          }
+          .title p{
+            font-size: 15px;
+          }
+          .details{
+            position: static;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 20px;
+            align-items: center;
+            width: 100%;
+          }
+          h1{
+            font-size: 40px;
+          }
+          p{
+            font-size: 18px;
+          }
+          .email{
+            width: 100%;
+            max-width: 300px;
+            height: 50px;
+            padding: 10px;
+          }
+          .details .btn-danger{
+            width: 100%;
+            max-width: 500px;
+            height: 50px;
+          }
+          
+        }
+
+        @media (max-width: 480px){
+          .logo{
+            width: 100px;
+            left: 10px;
+          }
+          .button{
+            flex-direction: column;
+            top: 20px;
+            gap: 10px;
+          }
+          .title h1{
+            font-size: 35px;
+          }
+          .title p{
+            font-size: 16px;
+          }
+          h1{
+            font-size: 30px;
+          }
+          p{
+            font-size: 16px;
+          }
+          .details{
+            bottom: 150px;
+            flex-direction: column;
+          }
+          .email{
+            width: 100%;
+            max-width: 300px;
+          }
+          .details .btn-danger{
+            width: 100%;
+            max-width: 300px;
+          }
+        }
+
+    </style>
+</head>
+<body>
+  <div class="first">
+    <div class="child">
+      <img src="Netflixlogo.png" class="logo" alt="">
+      <div class="button">
+        <div class="dropdown">
+          <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span><i class="fa-solid fa-language"></i>   <b>English</b></span>
+          </button>
+          <ul class="dropdown-menu btn-lg">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Hindi</a></li>
+          </ul>
+        </div>
+        <button type="button" class="btn btn-danger"><b>Sign in</b></button>
+      </div>
+     
+    </div>
+    <div class="title">
+      <h1>Laughter.Tears.Thrills.</h1>
+      <h1>Find it all on Netflix.</h1><br>
+      <p>Endless entertainment starts at just ₹149. Cancel anytime.</p>
+      <p> Ready to watch? Enter your email to create or restart your membership</p><br><br><br><br>
+      <div class="details">
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+          <label  style="color: rgb(247, 3, 3);" for="floatingTextarea">Email address</label>
+        </div>
+        <button type="button" class="btn btn-danger"><b>Get Started</b></button>
+      </div>
+    </div>
+    
+  </div><br><br>
+  <section class="second">
+    <div class="cartoon">
+      <img src="cartoonpic.jpg" alt="">
+    </div>
+    <div class="para2" id="kids">
+      <h1>Create profiles for kids.</h1><br>
+      <p><b>Send kids on adventures with their favourite characters </b></p>
+      <p><b>in a space made just for them—free with your membership.</b></p>
+    </div>
+  </section><br>
+  <hr><br>
+  <section class="second" id="TV">
+    <div class="para3">
+      <h1>Enjoy on your TV.</h1><br>
+      <p><b>Watch on smart TVs, PlayStation, Xbox,</b></p>
+      <p><b>Chromecast, Apple TV, Blu-ray players and more.</b></p>
+    </div>
+    <div class="tv">
+      <img src="tv1.png" alt="">
+      <video src="video1.m4v" autoplay muted loop></video>
+    </div>
+  </section><hr><br>
+
+  <section class="fourth" id="download">
+    <div class="cartoon">
+      <img src="strangerthings.jpg" alt="">
+    </div>
+    <div class="para4">
+      <h1>Download your shows
+        to watch offline.</h1><br>
+      <p><b>Save your favourites easily and always have something to watch.</b></p>
+      
+    </div>
+  </section><br><hr><br>
+
+  <section class="fifth" id="um">
+    <div class="para5">
+      <h1>Enjoy on your TV.</h1><br>
+      <p><b>Watch on smart TVs, PlayStation, Xbox,</b></p>
+      <p><b>Chromecast, Apple TV, Blu-ray players and more.</b></p>
+    </div>
+    <div class="tv">
+      <img src="tv2.png" alt="">
+      <video src="video2.m4v" autoplay muted loop></video>
+    </div>
+  </section><hr><br>
+
+  <div class="last" id="faq">
+    <h1>Frequently Asked Questions</h1>
+    <div class="accordion my-5 mx-5" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            Accordion Item #1
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            Accordion Item #2
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+            Accordion Item #3
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            Accordion Item #1
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <footer class="footer">
+    <div class="foot">
+      <div class="up">
+        <p>For any queiries contact 12345678</p>
+      </div>
+      <div class="points">
+        <p>
+          <a href="#">Home</a>
+          <a href="#kids">Kids</a>
+          <a href="#TV">TV</a>
+          <a href="#download">Download</a>
+          <a href="#">Watch Everywhere</a>
+          <a href="#faq">FAQ</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
